@@ -9,10 +9,16 @@ A fully functional neural network library built from scratch in Python, with wor
    .venv\Scripts\Activate.ps1
    ```
 
-2. **Run the Optimized Example:**
+2. **Run the Best Example:**
    ```bash
-   # Best GroundZero implementation - 69.5% accuracy with real learning!
+   # BEST: Fast parallel training - 79.8% accuracy in 2.7 minutes!
+   python examples/fast_parallel_mnist.py
+   
+   # BASELINE: Proven working - 73% accuracy
    python examples/optimized_mnist.py
+   
+   # ULTRA-FAST: Quick testing - 23% accuracy in 12 seconds
+   python examples/ultra_fast_mnist.py
    ```
 
 ## 📁 Project Structure
@@ -29,20 +35,22 @@ GroundZeroNN/
 │   ├── optimizers/          # Optimization algorithms
 │   ├── initializers/        # Weight initialization
 │   └── utils/               # Utilities and visualization
-├── examples/                # Working examples
-│   ├── optimized_mnist.py   # 🎯 Best: 69.5% accuracy
-│   ├── training_mnist.py    # Training demonstration
-│   └── README.md           # Examples documentation
+├── examples/                # Best working examples
+│   ├── fast_parallel_mnist.py   # � BEST: 79.8% accuracy in 2.7 min
+│   ├── optimized_mnist.py       # 📚 BASELINE: 73% accuracy, proven
+│   ├── ultra_fast_mnist.py      # ⚡ SPEED: 23% accuracy in 12 sec
+│   └── README.md               # Examples documentation
 ├── requirements.txt        # Minimal dependencies
 └── README.md              # This file
 ```
 
 ## 🏆 Results
 
-- **69.5% Test Accuracy** - Real learning, not random guessing!
+- **79.8% Test Accuracy** - Fast parallel training in 2.7 minutes!
 - **Proper Backpropagation** - Weights actually update during training
-- **Working Gradient Descent** - Loss decreases from 2.30 to 1.87
+- **Working Gradient Descent** - Loss decreases consistently
 - **Custom Implementation** - Built entirely with your GroundZero library
+- **Multiple Speed Options** - From 12 seconds to 2.7 minutes
 
 ## ✅ What's Working
 
@@ -56,15 +64,16 @@ GroundZeroNN/
 
 ## 🎨 Training Progress
 
-The optimized example shows real learning:
+The best example shows excellent learning:
 
 ```
-Epoch  1: 11.7% → 14.0% accuracy
-Epoch 10: 55.2% → 51.0% accuracy  
-Epoch 20: 74.5% → 69.5% accuracy
+Fast Parallel Training (fast_parallel_mnist.py):
+Epoch  1: 21.7% → 27.6% accuracy
+Epoch 10: 67.1% → 72.0% accuracy  
+Epoch 25: 79.5% → 79.8% accuracy
 
-Final: 69.5% test accuracy (vs 10% random guessing)
-Loss: 2.30 → 1.87 (proper decrease)
+Final: 79.8% test accuracy in 2.7 minutes
+Best improvement: +6.8% over baseline!
 ```
 
 ## 🔧 Installation
