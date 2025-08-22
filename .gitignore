@@ -205,3 +205,25 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Data files
+data/
+*.pkl
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# Model files
+*.pth
+*.pt
+*.onnx
+*.pb
+
+# Visualization outputs
+*.html
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.pdf
