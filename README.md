@@ -1,101 +1,88 @@
-# 🎯 GroundZeroNN
+# GroundZeroNN
 
-A fully functional neural network library built from scratch in Python, with working backpropagation, gradient descent, and proven MNIST learning capabilities.
+A neural network library built from scratch in Python -- no TensorFlow, no PyTorch -- with working backpropagation and 79.8% MNIST accuracy.
 
-## 🚀 Quick Start
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
+![MNIST](https://img.shields.io/badge/MNIST-79.8%25_Accuracy-green?style=flat)
 
-1. **Activate Virtual Environment:**
-   ```bash
-   .venv\Scripts\Activate.ps1
-   ```
+## Overview
 
-2. **Run the Best Example:**
-   ```bash
-   # BEST: Fast parallel training - 79.8% accuracy in 2.7 minutes!
-   python examples/fast_parallel_mnist.py
-   
-   # BASELINE: Proven working - 73% accuracy
-   python examples/optimized_mnist.py
-   
-   # ULTRA-FAST: Quick testing - 23% accuracy in 12 seconds
-   python examples/ultra_fast_mnist.py
-   ```
+GroundZeroNN is an educational neural network library built entirely from scratch using only NumPy for computation. It implements forward propagation, backpropagation with gradient computation, multiple activation functions, loss functions, and optimizers -- all without any external ML frameworks. Achieves 79.8% test accuracy on MNIST in under 3 minutes.
 
-## 📁 Project Structure
+## Results
+
+| Example | Accuracy | Training Time | Description |
+|---------|----------|---------------|-------------|
+| `fast_parallel_mnist.py` | **79.8%** | 2.7 min | Best: Parallel batch processing |
+| `optimized_mnist.py` | 73% | ~5 min | Baseline: Proven working |
+| `ultra_fast_mnist.py` | 23% | 12 sec | Speed test: Quick validation |
+
+### Training Progress (Best Model)
+
+```
+Epoch  1: 21.7% -> 27.6% accuracy
+Epoch 10: 67.1% -> 72.0% accuracy
+Epoch 25: 79.5% -> 79.8% accuracy
+Loss:     2.30  -> 1.87  (20 epochs)
+```
+
+## Features
+
+- **Forward Propagation** -- Data flows correctly through layers
+- **Backpropagation** -- Gradients computed and propagated backwards
+- **Weight Updates** -- Gradient descent with configurable learning rate
+- **Softmax + Cross-Entropy** -- Multi-class classification support
+- **Multiple Activations** -- ReLU, Sigmoid, Softmax
+- **Weight Initialization** -- He Normal, Xavier Normal
+- **No External ML Frameworks** -- Pure NumPy implementation
+
+## Architecture
+
+```
+Input (784) -> Dense(128, ReLU) -> Dense(64, Sigmoid) -> Dense(10, Softmax) -> Output
+```
+
+## Project Structure
 
 ```
 GroundZeroNN/
-├── groundzero_nn/             # Core neural network library
-│   ├── core/                 # Core components
-│   │   ├── neuron.py        # Individual neuron with backprop
-│   │   └── network.py       # Complete network class
-│   ├── layers/              # Neural network layers
-│   ├── activations/         # Activation functions
-│   ├── losses/              # Loss functions
-│   ├── optimizers/          # Optimization algorithms
-│   ├── initializers/        # Weight initialization
-│   └── utils/               # Utilities and visualization
-├── examples/                # Best working examples
-│   ├── fast_parallel_mnist.py   # � BEST: 79.8% accuracy in 2.7 min
-│   ├── optimized_mnist.py       # 📚 BASELINE: 73% accuracy, proven
-│   ├── ultra_fast_mnist.py      # ⚡ SPEED: 23% accuracy in 12 sec
-│   └── README.md               # Examples documentation
-├── requirements.txt        # Minimal dependencies
-└── README.md              # This file
+├── groundzero_nn/                 # Core library
+│   ├── core/
+│   │   ├── neuron.py             # Individual neuron with backprop
+│   │   └── network.py           # Complete network class
+│   ├── layers/                   # Dense layer implementation
+│   ├── activations/              # ReLU, Sigmoid, Softmax
+│   ├── losses/                   # Cross-Entropy, MSE
+│   ├── optimizers/               # SGD, Gradient Descent
+│   ├── initializers/             # He Normal, Xavier Normal
+│   └── utils/                    # Visualization utilities
+├── examples/
+│   ├── fast_parallel_mnist.py    # Best: 79.8% in 2.7 min
+│   ├── optimized_mnist.py        # Baseline: 73% accuracy
+│   └── ultra_fast_mnist.py       # Quick test: 12 seconds
+├── requirements.txt
+└── README.md
 ```
 
-## 🏆 Results
-
-- **79.8% Test Accuracy** - Fast parallel training in 2.7 minutes!
-- **Proper Backpropagation** - Weights actually update during training
-- **Working Gradient Descent** - Loss decreases consistently
-- **Custom Implementation** - Built entirely with your GroundZero library
-- **Multiple Speed Options** - From 12 seconds to 2.7 minutes
-
-## ✅ What's Working
-
-- ✅ **Clean Neural Network Library** - Built from scratch
-- ✅ **Forward Propagation** - Data flows correctly through layers
-- ✅ **Backpropagation** - Gradients computed and propagated backwards  
-- ✅ **Weight Updates** - Gradient descent actually updates weights
-- ✅ **Real Learning** - Not random guessing, actual improvement
-- ✅ **Softmax + Cross-Entropy** - Proper multi-class classification
-- ✅ **Custom Implementation** - Built entirely with GroundZero components
-
-## 🎨 Training Progress
-
-The best example shows excellent learning:
-
-```
-Fast Parallel Training (fast_parallel_mnist.py):
-Epoch  1: 21.7% → 27.6% accuracy
-Epoch 10: 67.1% → 72.0% accuracy  
-Epoch 25: 79.5% → 79.8% accuracy
-
-Final: 79.8% test accuracy in 2.7 minutes
-Best improvement: +6.8% over baseline!
-```
-
-## 🔧 Installation
+## Quick Start
 
 ```bash
-# Clone repository
 git clone https://github.com/Sagargupta16/GroundZeroNN.git
 cd GroundZeroNN
 
-# Activate virtual environment
-.venv\Scripts\Activate.ps1
+# Create and activate virtual environment
+python -m venv .venv
+.venv/Scripts/activate       # Windows
+# source .venv/bin/activate  # Linux/Mac
 
-# Install dependencies (if needed)
 pip install -r requirements.txt
 
-# Run the optimized example
-python examples/optimized_mnist.py
+# Run the best example
+python examples/fast_parallel_mnist.py
 ```
 
-## 🎯 Core Library Usage
-
-The `groundzero_nn` library provides working neural network components:
+## Usage
 
 ```python
 from groundzero_nn.layers import DenseLayer
@@ -103,36 +90,31 @@ from groundzero_nn.losses import get_loss_function
 
 # Create layers
 layer1 = DenseLayer(784, 128, activation='relu', initializer='he_normal')
-layer2 = DenseLayer(128, 10, activation='sigmoid', initializer='xavier_normal')
+layer2 = DenseLayer(128, 64, activation='sigmoid', initializer='xavier_normal')
+layer3 = DenseLayer(64, 10, activation='softmax', initializer='xavier_normal')
 
 # Forward pass
-output = layer1.forward(x)
-output = layer2.forward(output)
+h1 = layer1.forward(x)
+h2 = layer2.forward(h1)
+output = layer3.forward(h2)
 
-# Backward pass with gradients
-layer2.backward(gradients)
-layer1.backward(gradients)
+# Backward pass
+grad = layer3.backward(loss_gradient)
+grad = layer2.backward(grad)
+grad = layer1.backward(grad)
 
 # Update weights
-layer1.update_weights(learning_rate=0.01)
-layer2.update_weights(learning_rate=0.01)
+for layer in [layer1, layer2, layer3]:
+    layer.update_weights(learning_rate=0.01)
 ```
 
-## 📊 Technical Achievements
+## Dependencies
 
-- **Proper Gradient Computation** - Softmax + cross-entropy gradients working
-- **Weight Updates Verified** - Weights actually change during training
-- **Loss Decreases** - From 2.30 to 1.87 over 20 epochs
-- **Architecture Working** - 784→128→64→10 with ReLU/Sigmoid
-- **Custom Components** - No external frameworks for core logic
+- NumPy -- Core computations
+- Matplotlib -- Training visualizations
+- scikit-learn -- MNIST dataset loading
+- tqdm -- Progress bars
 
-## 🛠️ Dependencies
+## License
 
-- NumPy (for core computations)
-- Matplotlib (for visualizations)
-- scikit-learn (for MNIST dataset loading)
-- tqdm (for progress bars)
-
-## 📝 License
-
-MIT License - Feel free to use for educational and commercial purposes.
+MIT
